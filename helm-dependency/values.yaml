@@ -64,7 +64,7 @@ jenkins:
     adminPassword: "admin123"
     ## List of plugins to install in addition to those listed in master.installPlugins
     additionalPlugins:
-      - blueocean:lts
+      #- blueocean:lts
       - prometheus:lts
     ingress:
       enabled: true
