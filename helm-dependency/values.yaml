@@ -57,3 +57,33 @@ mariadb:
   ## side-car prometheus exporter
   metrics:
     enabled: true
+## --------------------------------------------------------------------------------------
+jenkins:
+  master:
+    imagePullPolicy: "IfNotPresent"
+    adminPassword: "admin123"
+    ## List of plugins to install in addition to those listed in master.installPlugins
+    additionalPlugins:
+      - blueocean:lts
+    ingress:
+      enabled: true
+    prometheus:
+      enabled: false
+  additionalAgents:
+    maven:
+      podName: maven
+      customJenkinsLabels: maven
+      # An example of overriding the jnlp container
+      # sideContainerName: jnlp
+      image: jenkins/jnlp-agent-maven
+      tag: latest
+    python:
+      podName: python
+      customJenkinsLabels: python
+      sideContainerName: python
+      image: python
+      tag: "3"
+      command: "/bin/sh -c"
+      args: "cat"
+      TTYEnabled: true
+      
