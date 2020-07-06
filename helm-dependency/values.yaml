@@ -50,8 +50,8 @@ mariadb:
     ## MariaDB username and password
     ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-user-on-first-run
     ##
-    user: "infinity"
-    password: "infinity123"
+    user: "stone"
+    password: "stone123"
     ## Database to create
     ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-on-first-run
     ##
