@@ -1,15 +1,7 @@
-mariadb:
-  enabled: false
-
 wordpress:
   wordpressPassword: foo
   mariadb:
-    enabled: false
-  externalDatabase:
-    host: localhost
-    user: bn_wordpress
-    password: ""
-    database: bitnami_wordpress
-    port: 3306
-
-    
+    db:
+      password: bar
+    rootUser:
+      password: baz
