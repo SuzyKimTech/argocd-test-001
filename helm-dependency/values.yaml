@@ -65,6 +65,7 @@ jenkins:
     ## List of plugins to install in addition to those listed in master.installPlugins
     additionalPlugins:
       - blueocean:lts
+      - prometheus:lts
     ingress:
       enabled: true
       ## configures the hostname e.g. jenkins.example.com
