@@ -1,8 +1,4 @@
 dependencies:
-- name: wordpress
-  version: 9.0.3
-  # repository: https://kubernetes-charts.storage.googleapis.com
-  repository: https://charts.bitnami.com/bitnami
 - name: sonatype-nexus
   version: 2.1.0
   repository: https://oteemo.github.io/charts
