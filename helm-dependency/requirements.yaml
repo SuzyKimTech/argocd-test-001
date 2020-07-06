@@ -2,3 +2,6 @@ dependencies:
 - name: sonatype-nexus
   version: 2.1.0
   repository: https://oteemo.github.io/charts
+- name: mariadb
+  version: 7.5.0
+  repository: https://charts.bitnami.com/bitnami
