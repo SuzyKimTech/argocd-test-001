@@ -67,5 +67,12 @@ jenkins:
       - blueocean:lts
     ingress:
       enabled: true
+      ## configures the hostname e.g. jenkins.example.com
+      hostName: jenkins.inf.com
+    ## Expose Prometheus metrics
     prometheus:
+      ## If enabled, add the prometheus plugin to the list of plugins to install
+      ## https://plugins.jenkins.io/prometheus
       enabled: false
+      ## Set a custom namespace where to deploy ServiceMonitor resource
+      serviceMonitorNamespace: default
