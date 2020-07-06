@@ -30,19 +30,15 @@ mariadb:
       slave: 30002
     
   ## MariaDB admin credentials
-  ##
   rootUser:
     ## MariaDB admin password
     ## ref: https://github.com/bitnami/bitnami-docker-mariadb#setting-the-root-password-on-first-run
-    ##
     password: "admin123"
     ## Option to force users to specify a password. That is required for 'helm upgrade' to work properly.
     ## If it is not force, a random password will be generated.
-    ##
     forcePassword: true
     ## Mount admin password as a file instead of using an environment variable
-    ##
-    injectSecretsAsVolume: false
+    injectSecretsAsVolume: true
 
   ## Custom user/db credentials
   # db:
