@@ -2,8 +2,10 @@
 gitlab:
   global:
     edition: ee
+    #edition: ce
     hosts:
       domain: gitlab.inf.com
   certmanager-issuer:
     email: kimounju@gmail.com
+## --set gitlab-runner.runners.privileged=true --set hosts.https=false
 ## --------------------------------------------------------------------------------------

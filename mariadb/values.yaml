@@ -1,16 +1,4 @@
 ## --------------------------------------------------------------------------------------
-sonatype-nexus:
-  nexusProxy:
-    enabled: true
-    env:
-      nexusDockerHost: docker.inf.com
-      nexusHttpHost: nexus.inf.com
-  ingress:
-    enabled: true
-  ## To use an additional service, set enable to true
-  service:
-    enabled: false
-## --------------------------------------------------------------------------------------
 mariadb:
   ## https://github.com/bitnami/charts/blob/master/bitnami/mariadb/values.yaml
   service:
@@ -57,24 +45,4 @@ mariadb:
   ## side-car prometheus exporter
   metrics:
     enabled: true
-## --------------------------------------------------------------------------------------
-jenkins:
-  master:
-    imagePullPolicy: "IfNotPresent"
-    adminPassword: "admin123"
-    ## List of plugins to install in addition to those listed in master.installPlugins
-    #additionalPlugins:
-      #- blueocean:lts
-      #- prometheus:lts
-    ingress:
-      enabled: true
-      ## configures the hostname e.g. jenkins.example.com
-      hostName: workflow.inf.com
-    ## Expose Prometheus metrics
-    #prometheus:
-      ## If enabled, add the prometheus plugin to the list of plugins to install
-      ## https://plugins.jenkins.io/prometheus
-      #enabled: false
-      ## Set a custom namespace where to deploy ServiceMonitor resource
-      #serviceMonitorNamespace: default
 ## --------------------------------------------------------------------------------------

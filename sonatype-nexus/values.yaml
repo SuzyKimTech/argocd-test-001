@@ -1,0 +1,13 @@
+## --------------------------------------------------------------------------------------
+sonatype-nexus:
+  nexusProxy:
+    enabled: true
+    env:
+      nexusDockerHost: docker.inf.com
+      nexusHttpHost: nexus.inf.com
+  ingress:
+    enabled: true
+  ## To use an additional service, set enable to true
+  service:
+    enabled: false
+## --------------------------------------------------------------------------------------
