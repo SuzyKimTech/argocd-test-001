@@ -91,6 +91,17 @@ grafana:
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     hosts:
       - grafana.inf.com
+  ## Configure grafana datasources
+  ## ref: http://docs.grafana.org/administration/provisioning/#datasources
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Prometheus
+          type: prometheus
+          url: http://prometheus-server
+          access: proxy
+          isDefault: true
   ## Configure grafana dashboard providers
   ## ref: http://docs.grafana.org/administration/provisioning/#dashboards
   ## `path` must be /var/lib/grafana/dashboards/<provider_name>
