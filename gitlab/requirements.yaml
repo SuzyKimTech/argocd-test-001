@@ -1,4 +1,4 @@
 dependencies:
 - name: gitlab
-  version: 4.1.2
+  version: latest
   repository: https://charts.gitlab.io

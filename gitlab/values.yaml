@@ -1,7 +1,7 @@
 ## --------------------------------------------------------------------------------------
 gitlab:
   global:
-    edition: ce
+    edition: ee
     hosts:
       domain: gitlab.inf.com
   certmanager-issuer:
