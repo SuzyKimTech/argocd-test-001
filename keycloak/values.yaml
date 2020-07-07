@@ -1,0 +1,21 @@
+## --------------------------------------------------------------------------------------
+keycloak:
+  keycloak:
+    ## Ingress configuration.
+    ## ref: https://kubernetes.io/docs/user-guide/ingress/
+    ingress:
+      enabled: true
+      path: /
+      annotations: {}
+        #kubernetes.io/ingress.class: nginx
+        #kubernetes.io/tls-acme: "true"
+        #ingress.kubernetes.io/affinity: cookie
+      ## List of hosts for the ingress
+      hosts:
+        - keycloak.inf.com
+      ## TLS configuration
+      tls: []
+      # - hosts:
+      #     - keycloak.example.com
+      #   secretName: tls-keycloak
+## --------------------------------------------------------------------------------------
