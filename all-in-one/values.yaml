@@ -1,0 +1,80 @@
+## --------------------------------------------------------------------------------------
+sonatype-nexus:
+  nexusProxy:
+    enabled: true
+    env:
+      nexusDockerHost: docker.inf.com
+      nexusHttpHost: nexus.inf.com
+  ingress:
+    enabled: true
+  ## To use an additional service, set enable to true
+  service:
+    enabled: false
+## --------------------------------------------------------------------------------------
+mariadb:
+  ## https://github.com/bitnami/charts/blob/master/bitnami/mariadb/values.yaml
+  service:
+    ## Kubernetes service type, ClusterIP and NodePort are supported at present
+    type: NodePort
+    # clusterIp:
+    #   master: xx.xx.xx.xx
+    #   slave: xx.xx.xx.xx
+    port: 3306
+    ## Specify the nodePort value for the LoadBalancer and NodePort service types.
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
+    nodePort:
+      master: 30001
+      slave: 30002
+  ## MariaDB admin credentials
+  rootUser:
+    ## MariaDB admin password
+    ## ref: https://github.com/bitnami/bitnami-docker-mariadb#setting-the-root-password-on-first-run
+    password: "admin123"
+    ## Option to force users to specify a password. That is required for 'helm upgrade' to work properly.
+    ## If it is not force, a random password will be generated.
+    forcePassword: true
+    ## Mount admin password as a file instead of using an environment variable
+    injectSecretsAsVolume: true
+  ## Custom user/db credentials
+  db:
+    ## MariaDB username and password
+    ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-user-on-first-run
+    user: "stone"
+    password: "stone123"
+    ## Database to create
+    ## ref: https://github.com/bitnami/bitnami-docker-mariadb#creating-a-database-on-first-run
+    name: INF
+    ## Option to force users to specify a password. That is required for 'helm upgrade' to work properly.
+    ## If it is not force, a random password will be generated.
+    forcePassword: true
+    ## Mount user password as a file instead of using an environment variable
+    injectSecretsAsVolume: true
+  ## Replication configuration
+  replication:
+    ## Enable replication. This enables the creation of replicas of MariaDB. If false, only a
+    ## master deployment would be created
+    enabled: false
+  ## side-car prometheus exporter
+  metrics:
+    enabled: true
+## --------------------------------------------------------------------------------------
+jenkins:
+  master:
+    imagePullPolicy: "IfNotPresent"
+    adminPassword: "admin123"
+    ## List of plugins to install in addition to those listed in master.installPlugins
+    #additionalPlugins:
+      #- blueocean:lts
+      #- prometheus:lts
+    ingress:
+      enabled: true
+      ## configures the hostname e.g. jenkins.example.com
+      hostName: workflow.inf.com
+    ## Expose Prometheus metrics
+    #prometheus:
+      ## If enabled, add the prometheus plugin to the list of plugins to install
+      ## https://plugins.jenkins.io/prometheus
+      #enabled: false
+      ## Set a custom namespace where to deploy ServiceMonitor resource
+      #serviceMonitorNamespace: default
+## --------------------------------------------------------------------------------------
