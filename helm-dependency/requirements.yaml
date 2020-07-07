@@ -5,6 +5,15 @@ dependencies:
 - name: mariadb
   version: 7.5.0
   repository: https://charts.bitnami.com/bitnami
-- name: jenkins
+- name: jenkins-workflow
   version: 2.1.0
   repository: https://kubernetes-charts.storage.googleapis.com
+- name: jenkins-ci
+  version: 2.1.0
+  repository: https://kubernetes-charts.storage.googleapis.com
+- name: jenkins-cd
+  version: 2.1.0
+  repository: https://kubernetes-charts.storage.googleapis.com
+# - name: prometheus
+#   version: 11.3.0
+#   repository: https://kubernetes-charts.storage.googleapis.com

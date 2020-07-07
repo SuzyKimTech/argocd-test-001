@@ -58,7 +58,7 @@ mariadb:
   metrics:
     enabled: true
 ## --------------------------------------------------------------------------------------
-jenkins:
+jenkins-workflow:
   master:
     imagePullPolicy: "IfNotPresent"
     adminPassword: "admin123"
@@ -69,7 +69,7 @@ jenkins:
     ingress:
       enabled: true
       ## configures the hostname e.g. jenkins.example.com
-      hostName: jenkins.inf.com
+      hostName: workflow.inf.com
     ## Expose Prometheus metrics
     #prometheus:
       ## If enabled, add the prometheus plugin to the list of plugins to install
@@ -77,3 +77,44 @@ jenkins:
       #enabled: false
       ## Set a custom namespace where to deploy ServiceMonitor resource
       #serviceMonitorNamespace: default
+## --------------------------------------------------------------------------------------
+jenkins-ci:
+  master:
+    imagePullPolicy: "IfNotPresent"
+    adminPassword: "admin123"
+    ## List of plugins to install in addition to those listed in master.installPlugins
+    #additionalPlugins:
+      #- blueocean:lts
+      #- prometheus:lts
+    ingress:
+      enabled: true
+      ## configures the hostname e.g. jenkins.example.com
+      hostName: jenkinsci.inf.com
+    ## Expose Prometheus metrics
+    #prometheus:
+      ## If enabled, add the prometheus plugin to the list of plugins to install
+      ## https://plugins.jenkins.io/prometheus
+      #enabled: false
+      ## Set a custom namespace where to deploy ServiceMonitor resource
+      #serviceMonitorNamespace: default
+## --------------------------------------------------------------------------------------
+jenkins-cd:
+  master:
+    imagePullPolicy: "IfNotPresent"
+    adminPassword: "admin123"
+    ## List of plugins to install in addition to those listed in master.installPlugins
+    #additionalPlugins:
+      #- blueocean:lts
+      #- prometheus:lts
+    ingress:
+      enabled: true
+      ## configures the hostname e.g. jenkins.example.com
+      hostName: jenkinscd.inf.com
+    ## Expose Prometheus metrics
+    #prometheus:
+      ## If enabled, add the prometheus plugin to the list of plugins to install
+      ## https://plugins.jenkins.io/prometheus
+      #enabled: false
+      ## Set a custom namespace where to deploy ServiceMonitor resource
+      #serviceMonitorNamespace: default
+## --------------------------------------------------------------------------------------
