@@ -79,7 +79,21 @@ jenkins:
       #serviceMonitorNamespace: default
 ## --------------------------------------------------------------------------------------
 prometheus:
-
+  server:
+    enabled: true
+    name: prometheus-server
+    ingress:
+      ## If true, Prometheus server Ingress will be created
+      enabled: false
+      ## Prometheus server Ingress annotations
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: 'true'
+      ## Prometheus server Ingress hostnames with optional path
+      ## Must be provided if Ingress is enabled
+      hosts:
+        - prometheus.inf.com
+        #- domain.com/prometheus
 ## --------------------------------------------------------------------------------------
 grafana:
   adminUser: admin
