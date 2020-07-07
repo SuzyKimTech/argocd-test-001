@@ -26,7 +26,7 @@ $ helm2 init
 ```
 $ brew install helm
 $ which helm
-$ cd /usr/local/bin/helm
+$ cd /usr/local/bin
 $ mv helm helm3
 $ helm3 version
 ```
