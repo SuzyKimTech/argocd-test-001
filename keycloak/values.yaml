@@ -7,7 +7,7 @@ keycloak:
     ## If not set, a random 10 characters password will be used
     password: "admin123"
     ## Specifies an existing secret to be used for the admin password
-    existingSecret: ""
+    #existingSecret: ""
     ## The key in the existing secret that stores the password
     existingSecretKey: password
     ## Ingress configuration.
