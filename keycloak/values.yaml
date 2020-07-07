@@ -5,7 +5,7 @@ keycloak:
     username: keycloak
     ## Password for the initial Keycloak admin user. Applicable only if existingSecret is not set.
     ## If not set, a random 10 characters password will be used
-    password: "admin123456"
+    password: "admin12345"
     ## Specifies an existing secret to be used for the admin password
     existingSecret: ""
     ## The key in the existing secret that stores the password
