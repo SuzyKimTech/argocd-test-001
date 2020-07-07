@@ -5,9 +5,9 @@ keycloak:
     username: keycloak
     ## Password for the initial Keycloak admin user. Applicable only if existingSecret is not set.
     ## If not set, a random 10 characters password will be used
-    password: ""
+    password: "admin123456"
     ## Specifies an existing secret to be used for the admin password
-    existingSecret: "admin123"
+    existingSecret: ""
     ## The key in the existing secret that stores the password
     existingSecretKey: password
     ## Ingress configuration.
